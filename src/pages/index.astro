@@ -1,12 +1,111 @@
 ---
-import "@assets/styles/global.css";
-import PageLayout from "@layouts/PageLayout.astro";
+// src/pages/index.astro
 ---
 
-<PageLayout>
-	<div class="flex flex-col text-blue-600">
-		<a href="/admin">CMS</a>
-		<a href="/admin/config.yml">CMS Config</a>
-		<a href="/blog/seed">Seed Post</a>
-	</div>
-</PageLayout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Title & Description -->
+    <title>24/7 Emergency Water Damage Restoration | SnappyX</title>
+    <meta name="description" content="Flooded basement? Burst pipes? We provide 24/7 emergency water extraction, mold remediation, and drying services. We bill your insurance directly. Call Now." />
+    
+    <style>
+      /* Simple & Fast CSS */
+      body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+      
+      /* Header / Hero Section */
+      .hero { 
+        background: #004d99; /* Water Blue Color */
+        color: white; 
+        padding: 4rem 1rem; 
+        text-align: center; 
+      }
+      .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+      .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+      
+      /* Urgent Call Button */
+      .call-btn { 
+        background: #d32f2f; /* Urgent Red */
+        color: white; 
+        padding: 18px 35px; 
+        font-size: 1.5rem; 
+        text-decoration: none; 
+        border-radius: 8px; 
+        font-weight: bold; 
+        display: inline-block;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        animation: pulse 2s infinite;
+      }
+      
+      /* Services Grid */
+      .features { padding: 3rem 1rem; max-width: 900px; margin: 0 auto; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+      .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #f9f9f9; text-align: center; }
+      .card h3 { color: #004d99; }
+
+      /* Trust Section */
+      .trust { background: #e6f7ff; padding: 2rem 1rem; text-align: center; margin-top: 2rem; }
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HERO SECTION (Pehle ye dikhega) -->
+    <div class="hero">
+      <h1>FLOODED BASEMENT?</h1>
+      <p>We arrive in <strong>60 Minutes or Less</strong>. 24/7 Emergency Service.</p>
+      
+      <!-- Yahan apna Number dalna -->
+      <a href="tel:555-0123" class="call-btn">📞 Call Now: (555) 012-3456</a>
+      
+      <p style="margin-top: 15px; font-size: 0.9rem;">🔴 Live Technicians Available Right Now</p>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <div class="features">
+      <h2 style="text-align: center;">Our Emergency Services</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <h3>💧 Water Extraction</h3>
+          <p>Powerful pumps to remove standing water from basements and carpets immediately.</p>
+        </div>
+
+        <div class="card">
+          <h3>❄️ Frozen/Burst Pipes</h3>
+          <p>We fix the leak and dry the damage caused by winter pipe bursts.</p>
+        </div>
+
+        <div class="card">
+          <h3>🤢 Sewage Cleanup</h3>
+          <p>Safe removal of hazardous sewage backup. We sanitize and deodorize your home.</p>
+        </div>
+
+        <div class="card">
+          <h3>🍄 Mold Remediation</h3>
+          <p>Prevent toxic mold growth with our industrial drying and dehumidification process.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TRUST SECTION -->
+    <div class="trust">
+      <h2>Why Homeowners Trust Us?</h2>
+      <p>✅ <strong>$0 Out of Pocket:</strong> We bill your Insurance Company directly.</p>
+      <p>✅ <strong>Licensed & Insured:</strong> Fully certified IICRC technicians.</p>
+      <p>✅ <strong>30-60 Min Response:</strong> Because water damage gets worse every minute.</p>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background: #333; color: white;">
+      <p>&copy; 2025 SnappyX Restoration Services</p>
+    </footer>
+
+  </body>
+</html>
