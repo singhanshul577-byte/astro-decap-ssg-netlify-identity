@@ -1,111 +1,189 @@
 ---
-// src/pages/index.astro
+// --- HOMEPAGE LOGIC ---
+
+const states = [
+  { name: "Ohio", slug: "water-damage-ohio", count: "50 Pros" },
+  { name: "New York", slug: "water-damage-new-york", count: "65 Pros" },
+  { name: "Texas", slug: "water-damage-texas", count: "48 Pros" },
+  { name: "Florida", slug: "water-damage-florida", count: "52 Pros" },
+  { name: "Illinois", slug: "water-damage-illinois", count: "40 Pros" },
+  { name: "California", slug: "water-damage-california", count: "70 Pros" },
+  { name: "Pennsylvania", slug: "water-damage-pennsylvania", count: "30 Pros" },
+  { name: "Georgia", slug: "water-damage-georgia", count: "25 Pros" }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SnappyX Dispatch Network",
+  "url": "https://snappyx.pro",
+  "logo": "https://snappyx.pro/logo.png",
+  "telephone": "1-800-555-0199"
+};
 ---
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO Title & Description -->
-    <title>24/7 Emergency Water Damage Restoration | SnappyX</title>
-    <meta name="description" content="Flooded basement? Burst pipes? We provide 24/7 emergency water extraction, mold remediation, and drying services. We bill your insurance directly. Call Now." />
-    
-    <style>
-      /* Simple & Fast CSS */
-      body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-      
-      /* Header / Hero Section */
-      .hero { 
-        background: #004d99; /* Water Blue Color */
-        color: white; 
-        padding: 4rem 1rem; 
-        text-align: center; 
-      }
-      .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
-      .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
-      
-      /* Urgent Call Button */
-      .call-btn { 
-        background: #d32f2f; /* Urgent Red */
-        color: white; 
-        padding: 18px 35px; 
-        font-size: 1.5rem; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        font-weight: bold; 
-        display: inline-block;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        animation: pulse 2s infinite;
-      }
-      
-      /* Services Grid */
-      .features { padding: 3rem 1rem; max-width: 900px; margin: 0 auto; }
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-      .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #f9f9f9; text-align: center; }
-      .card h3 { color: #004d99; }
-
-      /* Trust Section */
-      .trust { background: #e6f7ff; padding: 2rem 1rem; text-align: center; margin-top: 2rem; }
-
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>National Water Damage Restoration Network | 24/7 Support</title>
+    <meta name="description" content="Immediate water extraction. Connecting you to licensed local pros in 60 minutes. Direct insurance billing." />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
-  <body>
+  <body class="bg-gray-50 font-sans text-slate-900 pb-24">
 
-    <!-- HERO SECTION (Pehle ye dikhega) -->
-    <div class="hero">
-      <h1>FLOODED BASEMENT?</h1>
-      <p>We arrive in <strong>60 Minutes or Less</strong>. 24/7 Emergency Service.</p>
-      
-      <!-- Yahan apna Number dalna -->
-      <a href="tel:555-0123" class="call-btn">📞 Call Now: (555) 012-3456</a>
-      
-      <p style="margin-top: 15px; font-size: 0.9rem;">🔴 Live Technicians Available Right Now</p>
-    </div>
+    <!-- 1. PREMIUM NAVBAR (Sticky) -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 px-6 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl">💧</span>
+            <div class="font-black text-2xl tracking-tighter italic text-slate-900">
+                SNAPPY<span class="text-blue-600">X</span>
+            </div>
+        </div>
+        <!-- Desktop Call Button -->
+        <a href="tel:18005550199" class="hidden md:inline-flex bg-red-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-red-700 hover:shadow-xl transition transform hover:-translate-y-0.5 no-underline">
+            📞 1-800-555-0199
+        </a>
+        <!-- Mobile Simple Link -->
+        <a href="tel:18005550199" class="md:hidden text-green-600 font-bold text-sm uppercase border border-green-600 px-3 py-1 rounded">
+            Call Now
+        </a>
+    </nav>
 
-    <!-- SERVICES SECTION -->
-    <div class="features">
-      <h2 style="text-align: center;">Our Emergency Services</h2>
-      <div class="grid">
+    <!-- 2. HERO SECTION (Professional Dark Theme) -->
+    <header class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white pt-20 pb-28 px-4 text-center overflow-hidden">
         
-        <div class="card">
-          <h3>💧 Water Extraction</h3>
-          <p>Powerful pumps to remove standing water from basements and carpets immediately.</p>
-        </div>
+        <!-- Background Pattern (Subtle) -->
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
-        <div class="card">
-          <h3>❄️ Frozen/Burst Pipes</h3>
-          <p>We fix the leak and dry the damage caused by winter pipe bursts.</p>
-        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="inline-flex items-center bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8 animate-pulse">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                Dispatch Active: Nationwide
+            </div>
 
-        <div class="card">
-          <h3>🤢 Sewage Cleanup</h3>
-          <p>Safe removal of hazardous sewage backup. We sanitize and deodorize your home.</p>
-        </div>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-tight mb-6 drop-shadow-lg">
+                Emergency <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Water Damage?</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                We connect you to licensed restoration experts in <strong>60 minutes</strong> or less. Don't let mold grow.
+            </p>
 
-        <div class="card">
-          <h3>🍄 Mold Remediation</h3>
-          <p>Prevent toxic mold growth with our industrial drying and dehumidification process.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="tel:18005550199" class="inline-flex items-center justify-center bg-red-600 text-white font-black text-2xl py-5 px-12 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:bg-red-500 hover:scale-105 transition duration-300 no-underline">
+                    📞 CALL DISPATCH
+                </a>
+                <div class="hidden md:flex items-center gap-4 text-left px-4">
+                    <div class="text-sm font-bold text-gray-300">
+                        <span class="block text-white text-lg">4.9/5</span>
+                        Avg Rating
+                    </div>
+                    <div class="w-px h-8 bg-gray-700"></div>
+                    <div class="text-sm font-bold text-gray-300">
+                        <span class="block text-white text-lg">15 Min</span>
+                        Dispatch
+                    </div>
+                </div>
+            </div>
         </div>
+    </header>
 
-      </div>
+    <!-- 3. TRUST STRIP (Overlapping) -->
+    <div class="max-w-5xl mx-auto px-4 -mt-10 relative z-20">
+        <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="flex flex-col items-center">
+                <span class="text-3xl mb-2">🛡️</span>
+                <span class="font-bold text-slate-800 text-sm">Licensed Pros</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl mb-2">💰</span>
+                <span class="font-bold text-slate-800 text-sm">$0 Down Billing</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl mb-2">⚡</span>
+                <span class="font-bold text-slate-800 text-sm">60-Min Arrival</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl mb-2">📞</span>
+                <span class="font-bold text-slate-800 text-sm">24/7 Live Help</span>
+            </div>
+        </div>
     </div>
 
-    <!-- TRUST SECTION -->
-    <div class="trust">
-      <h2>Why Homeowners Trust Us?</h2>
-      <p>✅ <strong>$0 Out of Pocket:</strong> We bill your Insurance Company directly.</p>
-      <p>✅ <strong>Licensed & Insured:</strong> Fully certified IICRC technicians.</p>
-      <p>✅ <strong>30-60 Min Response:</strong> Because water damage gets worse every minute.</p>
-    </div>
+    <!-- 4. STATE SELECTOR (Clean Grid) -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tight mb-2">Find Your Local Team</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto rounded"></div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {states.map((state) => (
+                <a href={`/${state.slug}/`} class="group block bg-white border border-gray-200 p-6 rounded-xl hover:border-blue-500 hover:shadow-lg transition duration-300 text-center no-underline">
+                    <div class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition">
+                        {state.name}
+                    </div>
+                    <div class="text-xs text-gray-400 mt-2 font-medium bg-gray-50 inline-block px-2 py-1 rounded">
+                        {state.count}
+                    </div>
+                </a>
+            ))}
+        </div>
+    </section>
 
-    <footer style="text-align: center; padding: 20px; background: #333; color: white;">
-      <p>&copy; 2025 SnappyX Restoration Services</p>
+    <!-- 5. HOW IT WORKS (Visual Steps) -->
+    <section class="bg-slate-100 py-20 px-4 border-y border-gray-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-12 uppercase text-slate-800">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-bl-xl text-xs">STEP 1</div>
+                    <div class="text-5xl mb-4">📞</div>
+                    <h3 class="font-bold text-lg mb-2">Call Dispatch</h3>
+                    <p class="text-gray-600 text-sm">Click the button to connect with our 24/7 national emergency center.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-bl-xl text-xs">STEP 2</div>
+                    <div class="text-5xl mb-4">📍</div>
+                    <h3 class="font-bold text-lg mb-2">We Locate Pros</h3>
+                    <p class="text-gray-600 text-sm">We instantly route your call to the nearest licensed expert in your zip code.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-bl-xl text-xs">STEP 3</div>
+                    <div class="text-5xl mb-4">🚒</div>
+                    <h3 class="font-bold text-lg mb-2">Rapid Arrival</h3>
+                    <p class="text-gray-600 text-sm">A technician arrives within 60 minutes to stop the damage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-slate-900 text-gray-400 py-16 px-6 text-center text-sm border-t-4 border-blue-600">
+        <div class="font-black text-2xl text-white mb-6 italic tracking-tighter">SNAPPYX</div>
+        <p class="max-w-2xl mx-auto opacity-70 leading-relaxed mb-8">
+            <strong>Consumer Notice:</strong> SnappyX is a free service that connects homeowners with independent, licensed contractors. All contractors are independent and SnappyX does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed.
+        </p>
+        <div class="flex justify-center gap-6 text-xs font-bold uppercase tracking-wider">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+            <a href="#" class="hover:text-white transition">Contact</a>
+        </div>
     </footer>
+
+    <!-- 7. MOBILE STICKY FOOTER (Visible only on Mobile) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 z-50 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.1)]">
+        <a href="tel:18005550199" class="flex items-center justify-between bg-green-600 text-white px-5 py-3 rounded-xl shadow-lg active:bg-green-700 transition transform active:scale-95 no-underline">
+            <div class="flex flex-col text-left">
+                <span class="text-[10px] uppercase font-bold text-green-100 tracking-wider">Technician Available</span>
+                <span class="text-xl font-black leading-none">CALL NOW</span>
+            </div>
+            <div class="bg-white/20 p-2 rounded-full animate-pulse">
+                📞
+            </div>
+        </a>
+    </div>
 
   </body>
 </html>
