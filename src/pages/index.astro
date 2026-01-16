@@ -1,21 +1,19 @@
 ---
-// LEVEL 1: Homepage - VIRAL DESIGN + AI CHATBOT
-// Based on ServPro + PuroClean + 911 Restoration best practices
-
+// LEVEL 1: IMPROVED Homepage - Viral Design + AI Chatbot + SEO Optimized
 const phoneNumber = "+15550123456";
 const phoneDisplay = "(555) 012-3456";
 
 const states = [
-  { name: "Ohio", slug: "ohio", emoji: "🏛️", cities: 50, techs: 12 },
-  { name: "New York", slug: "new-york", emoji: "🗽", cities: 60, techs: 18 },
-  { name: "Florida", slug: "florida", emoji: "🌴", cities: 45, techs: 15 },
-  { name: "California", slug: "california", emoji: "☀️", cities: 80, techs: 22 },
-  { name: "Texas", slug: "texas", emoji: "🤠", cities: 40, techs: 10 },
-  { name: "Michigan", slug: "michigan", emoji: "🚗", cities: 45, techs: 14 },
-  { name: "Illinois", slug: "illinois", emoji: "🌃", cities: 35, techs: 11 },
-  { name: "Massachusetts", slug: "massachusetts", emoji: "🎓", cities: 50, techs: 16 },
-  { name: "New Jersey", slug: "new-jersey", emoji: "🏖️", cities: 60, techs: 17 },
-  { name: "Connecticut", slug: "connecticut", emoji: "🏛️", cities: 40, techs: 13 }
+  { name: "Ohio", slug: "ohio", emoji: "🏛️", cities: 50, status: "12 Active Now" },
+  { name: "New York", slug: "new-york", emoji: "🗽", cities: 60, status: "18 Active Now" },
+  { name: "Florida", slug: "florida", emoji: "🌴", cities: 45, status: "15 Active Now" },
+  { name: "California", slug: "california", emoji: "☀️", cities: 80, status: "22 Active Now" },
+  { name: "Texas", slug: "texas", emoji: "🤠", cities: 40, status: "10 Active Now" },
+  { name: "Michigan", slug: "michigan", emoji: "🚗", cities: 45, status: "14 Active Now" },
+  { name: "Illinois", slug: "illinois", emoji: "🌃", cities: 35, status: "11 Active Now" },
+  { name: "Massachusetts", slug: "massachusetts", emoji: "🎓", cities: 50, status: "16 Active Now" },
+  { name: "New Jersey", slug: "new-jersey", emoji: "🏖️", cities: 60, status: "17 Active Now" },
+  { name: "Connecticut", slug: "connecticut", emoji: "🏛️", cities: 40, status: "13 Active Now" }
 ];
 
 const topSuburbs = [
@@ -38,30 +36,52 @@ const testimonials = [
     name: "Sarah Johnson", 
     location: "Scarsdale, NY", 
     rating: 5, 
-    text: "Our basement flooded at 2 AM. SnappyX arrived in 35 minutes and saved our home. Professional, fast, and caring. Can't thank them enough!",
-    service: "Water Extraction"
+    text: "Our basement flooded at 2 AM. SnappyX arrived in 35 minutes and saved our home. Professional, fast, and caring!",
+    service: "Water Extraction",
+    image: "👩‍💼"
   },
   { 
     name: "Mike Chen", 
     location: "Birmingham, MI", 
     rating: 5, 
-    text: "Insurance paid everything. Zero out of pocket. The team was incredible and finished in 3 days. Highly recommend!",
-    service: "Mold Prevention"
+    text: "Insurance paid everything. Zero out of pocket. Team was incredible and finished in 3 days!",
+    service: "Mold Prevention",
+    image: "👨‍💼"
   },
   { 
     name: "Emily Rodriguez", 
     location: "Greenwich, CT", 
     rating: 5, 
-    text: "Burst pipe disaster turned into a smooth restoration. They handled everything including insurance paperwork. Stress-free experience!",
-    service: "Burst Pipe Repair"
+    text: "Burst pipe disaster turned smooth. They handled everything including insurance. Stress-free!",
+    service: "Burst Pipe Repair",
+    image: "👩"
   }
 ];
 
 const certifications = [
-  { name: "IICRC Certified", icon: "🏆" },
-  { name: "EPA Lead-Safe", icon: "🛡️" },
-  { name: "BBB A+ Rated", icon: "⭐" },
-  { name: "Insured & Bonded", icon: "✅" }
+  { name: "IICRC Certified", icon: "🏆", desc: "Industry Standard" },
+  { name: "EPA Lead-Safe", icon: "🛡️", desc: "Environmental" },
+  { name: "BBB A+ Rated", icon: "⭐", desc: "Accredited Business" },
+  { name: "Fully Insured", icon: "✅", desc: "$2M Coverage" }
+];
+
+const faqs = [
+  {
+    q: "Do you work with insurance companies?",
+    a: "Yes! We bill insurance directly. Most homeowners pay $0 out of pocket. We handle all claims paperwork."
+  },
+  {
+    q: "How fast can you arrive?",
+    a: "30-60 minutes in most areas. We have 141 certified technicians across 10 states ready to respond 24/7."
+  },
+  {
+    q: "What areas do you serve?",
+    a: "We serve 500+ communities across OH, NY, FL, CA, TX, MI, IL, MA, NJ, and CT. Click your state above to see cities."
+  },
+  {
+    q: "Are you available 24/7?",
+    a: "Yes! Water damage doesn't wait. We're available 24/7/365 including holidays for emergency response."
+  }
 ];
 ---
 
@@ -72,11 +92,26 @@ const certifications = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>🚨 Emergency Water Damage Restoration | 60-Min Response | SnappyX</title>
-  <meta name="description" content="Emergency water damage restoration across 500+ US communities. 60-minute response, $0 out of pocket with insurance, 24/7 service. Licensed technicians arrive fast. Call now!">
-  <meta name="keywords" content="emergency water damage, water restoration, flood cleanup, burst pipe repair, 24/7 water damage, mold removal, sewage cleanup">
+  <title>🚨 Emergency Water Damage Restoration | 60-Min Response | $0 Out of Pocket</title>
+  <meta name="description" content="Emergency water damage restoration in 500+ US communities. 60-min response, $0 with insurance, IICRC certified, 24/7 service. Call now for immediate help!">
+  <meta name="keywords" content="emergency water damage, water restoration, flood cleanup, burst pipe repair, sewage cleanup, mold removal, 24/7 water damage">
   
-  <!-- Tawk.to AI Chatbot (FREE) -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="🚨 Emergency Water Damage Restoration | 60-Min Response">
+  <meta property="og:description" content="Fast emergency water damage service. Available 24/7 in 500+ communities. $0 out of pocket with insurance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://snappyx.pro">
+  <meta property="og:image" content="https://snappyx.pro/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emergency Water Damage Restoration | SnappyX">
+  <meta name="twitter:description" content="60-minute response. $0 out of pocket. 24/7 emergency service.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://snappyx.pro">
+  
+  <!-- Tawk.to FREE AI Chatbot -->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
@@ -88,6 +123,7 @@ const certifications = [
   s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
+  <!--END Tawk.to-->
   
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -95,22 +131,30 @@ const certifications = [
     "@context": "https://schema.org",
     "@type": "EmergencyService",
     "name": "SnappyX Emergency Water Restoration",
-    "description": "24/7 emergency water damage restoration service",
-    "telephone": "{phoneNumber}",
+    "description": "24/7 emergency water damage restoration - The Paramedics of Property Damage",
+    "telephone": "+15550123456",
     "url": "https://snappyx.pro",
+    "logo": "https://snappyx.pro/logo.png",
+    "image": "https://snappyx.pro/og-image.jpg",
     "priceRange": "$$",
     "areaServed": [
-      { "@type": "State", "name": "Ohio" },
-      { "@type": "State", "name": "New York" },
-      { "@type": "State", "name": "Florida" },
-      { "@type": "State", "name": "California" },
-      { "@type": "State", "name": "Texas" },
-      { "@type": "State", "name": "Michigan" },
-      { "@type": "State", "name": "Illinois" },
-      { "@type": "State", "name": "Massachusetts" },
-      { "@type": "State", "name": "New Jersey" },
-      { "@type": "State", "name": "Connecticut" }
+      {"@type": "State", "name": "Ohio"},
+      {"@type": "State", "name": "New York"},
+      {"@type": "State", "name": "Florida"},
+      {"@type": "State", "name": "California"},
+      {"@type": "State", "name": "Texas"},
+      {"@type": "State", "name": "Michigan"},
+      {"@type": "State", "name": "Illinois"},
+      {"@type": "State", "name": "Massachusetts"},
+      {"@type": "State", "name": "New Jersey"},
+      {"@type": "State", "name": "Connecticut"}
     ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -119,34 +163,33 @@ const certifications = [
     }
   }
   </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
 
-  <!-- STICKY HEADER -->
+  <!-- HEADER -->
   <header class="header" id="header">
     <nav class="nav container">
       <a href="/" class="logo">
         <span class="logo-icon">⚡</span>
-        <span class="logo-text">SnappyX</span>
-        <span class="logo-tagline">The Paramedics of Property Damage</span>
+        <div class="logo-content">
+          <span class="logo-text">SnappyX</span>
+          <span class="logo-tagline">The Paramedics of Property Damage™</span>
+        </div>
       </a>
       
-      <div class="nav-right">
-        <a href={`tel:${phoneNumber}`} class="header-cta">
-          <span class="cta-icon">📞</span>
-          <span class="cta-text">{phoneDisplay}</span>
-        </a>
-      </div>
+      <a href={`tel:${phoneNumber}`} class="header-cta">
+        <span class="cta-icon">📞</span>
+        <span class="cta-text">{phoneDisplay}</span>
+      </a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-video">
-      <!-- Animated gradient background -->
-      <div class="hero-gradient"></div>
-    </div>
+    <div class="hero-bg"></div>
     
     <div class="container hero-content">
       <div class="emergency-badge" data-aos="fade-down">
@@ -161,10 +204,10 @@ const certifications = [
       
       <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
         <strong>Faster to Any Size Disaster™</strong><br>
-        24/7 Emergency Water Damage Restoration • <span class="highlight-yellow">$0 Out of Pocket</span> with Insurance
+        24/7 Emergency Restoration • <span class="highlight-gold">$0 Out of Pocket</span> with Insurance
       </p>
       
-      <a href={`tel:${phoneNumber}`} class="hero-cta mega-cta" data-aos="zoom-in" data-aos-delay="300">
+      <a href={`tel:${phoneNumber}`} class="hero-cta pulse-cta" data-aos="zoom-in" data-aos-delay="300">
         <span class="cta-icon-large">📞</span>
         <div class="cta-content">
           <span class="cta-label">CALL NOW FOR IMMEDIATE HELP</span>
@@ -174,13 +217,13 @@ const certifications = [
       
       <div class="live-status" data-aos="fade-up" data-aos-delay="400">
         <span class="status-dot"></span>
-        <span class="status-text"><strong>141 Technicians</strong> Available Across 10 States Right Now</span>
+        <span class="status-text"><strong>141 Technicians</strong> Online Across 10 States Right Now</span>
       </div>
       
-      <!-- Certifications Bar -->
-      <div class="cert-bar" data-aos="fade-up" data-aos-delay="500">
+      <!-- Certifications -->
+      <div class="cert-badges" data-aos="fade-up" data-aos-delay="500">
         {certifications.map(cert => (
-          <div class="cert-item">
+          <div class="cert-badge" title={cert.desc}>
             <span class="cert-icon">{cert.icon}</span>
             <span class="cert-name">{cert.name}</span>
           </div>
@@ -207,7 +250,7 @@ const certifications = [
           <span class="trust-icon">📍</span>
           <div class="trust-content">
             <span class="trust-value">500+</span>
-            <span class="trust-label">US Communities</span>
+            <span class="trust-label">Communities</span>
           </div>
         </div>
         
@@ -226,15 +269,15 @@ const certifications = [
         <div class="trust-item">
           <span class="trust-icon">✅</span>
           <div class="trust-content">
-            <span class="trust-value">15,000+</span>
-            <span class="trust-label">Jobs Completed</span>
+            <span class="trust-value">15K+</span>
+            <span class="trust-label">Jobs Done</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATE SELECTOR -->
+  <!-- STATES -->
   <section class="states-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -242,28 +285,19 @@ const certifications = [
           Find Emergency Service <span class="highlight">In Your State</span>
         </h2>
         <p class="section-subtitle">
-          Click your state below • Technicians ready to respond 24/7
+          Click your state • Technicians ready 24/7 in your area
         </p>
       </div>
       
       <div class="states-grid">
         {states.map((state, index) => (
-          <a 
-            href={`/${state.slug}`} 
-            class="state-card"
-            data-aos="zoom-in"
-            data-aos-delay={index * 50}
-          >
+          <a href={`/${state.slug}`} class="state-card" data-aos="zoom-in" data-aos-delay={index * 40}>
             <div class="state-emoji">{state.emoji}</div>
             <h3 class="state-name">{state.name}</h3>
-            <p class="state-meta">
-              <span class="state-cities">{state.cities} Cities</span>
-              <span class="state-divider">•</span>
-              <span class="state-techs">{state.techs} Techs Online</span>
-            </p>
+            <p class="state-cities">{state.cities} Cities</p>
             <div class="state-status">
               <span class="status-dot-small"></span>
-              Available Now
+              {state.status}
             </div>
             <span class="state-arrow">→</span>
           </a>
@@ -272,30 +306,32 @@ const certifications = [
     </div>
   </section>
 
-  <!-- TESTIMONIALS (Like ServPro/PuroClean) -->
+  <!-- TESTIMONIALS (NEW!) -->
   <section class="testimonials-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">
-          What Our <span class="highlight">Customers Say</span>
+          What <span class="highlight">Real Customers</span> Say
         </h2>
         <p class="section-subtitle">
-          Real stories from homeowners we've helped in emergencies
+          Stories from homeowners we've helped in emergencies
         </p>
       </div>
       
       <div class="testimonials-grid">
-        {testimonials.map((testimonial, index) => (
-          <div class="testimonial-card" data-aos="fade-up" data-aos-delay={index * 100}>
+        {testimonials.map((t, i) => (
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay={i * 100}>
             <div class="testimonial-header">
-              <div class="testimonial-stars">
-                {'⭐'.repeat(testimonial.rating)}
-              </div>
-              <div class="testimonial-service">{testimonial.service}</div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <div class="testimonial-service">{t.service}</div>
             </div>
-            <p class="testimonial-text">"{testimonial.text}"</p>
+            <p class="testimonial-text">"{t.text}"</p>
             <div class="testimonial-author">
-              <strong>{testimonial.name}</strong> – {testimonial.location}
+              <span class="author-avatar">{t.image}</span>
+              <div>
+                <strong>{t.name}</strong>
+                <span class="author-location">{t.location}</span>
+              </div>
             </div>
           </div>
         ))}
@@ -303,7 +339,7 @@ const certifications = [
     </div>
   </section>
 
-  <!-- RECENTLY SERVED -->
+  <!-- SUBURBS -->
   <section class="suburbs-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -311,18 +347,13 @@ const certifications = [
           <span class="highlight">Recently Served</span> Emergency Areas
         </h2>
         <p class="section-subtitle">
-          🔴 Live dispatch activity • Your community is covered!
+          🔴 Live activity • Your community is covered!
         </p>
       </div>
       
       <div class="suburbs-grid">
         {topSuburbs.map((suburb, index) => (
-          <a 
-            href={`/${suburb.slug}`} 
-            class={`suburb-card ${suburb.urgent ? 'urgent' : ''}`}
-            data-aos="slide-right"
-            data-aos-delay={index * 40}
-          >
+          <a href={`/${suburb.slug}`} class={`suburb-card ${suburb.urgent ? 'urgent' : ''}`} data-aos="slide-right" data-aos-delay={index * 40}>
             <div class="suburb-header">
               <div class="suburb-indicator">
                 <span class="indicator-dot"></span>
@@ -330,10 +361,8 @@ const certifications = [
               </div>
               {suburb.urgent && <span class="urgent-badge">🔥 ACTIVE</span>}
             </div>
-            
             <h3 class="suburb-name">{suburb.name}, {suburb.state}</h3>
-            <p class="suburb-meta">Emergency water damage call completed</p>
-            
+            <p class="suburb-meta">Emergency call completed</p>
             <span class="suburb-arrow">View Coverage →</span>
           </a>
         ))}
@@ -341,64 +370,60 @@ const certifications = [
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
-  <section class="why-section">
+  <!-- FAQ (NEW!) -->
+  <section class="faq-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">
-          Why Homeowners <span class="highlight">Choose SnappyX</span>
+          Frequently Asked <span class="highlight">Questions</span>
         </h2>
         <p class="section-subtitle">
-          The #1 choice in emergency water damage restoration
+          Quick answers to common questions
         </p>
       </div>
       
-      <div class="why-grid">
-        <div class="why-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="why-icon">💰</div>
-          <h3 class="why-title">$0 Out of Pocket</h3>
-          <p class="why-desc">
-            We bill your insurance directly. Most homeowners pay nothing. We handle all paperwork and claims processing.
+      <div class="faq-grid">
+        {faqs.map((faq, i) => (
+          <div class="faq-item" data-aos="fade-up" data-aos-delay={i * 100}>
+            <h3 class="faq-question">{faq.q}</h3>
+            <p class="faq-answer">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">
+          Why Choose <span class="highlight">SnappyX</span>
+        </h2>
+      </div>
+      
+      <div class="trust-grid">
+        <div class="trust-point" data-aos="fade-up">
+          <div class="trust-icon-large">💰</div>
+          <h3 class="trust-point-title">$0 Out of Pocket</h3>
+          <p class="trust-point-desc">
+            We bill insurance directly. Most pay nothing. We handle all claims paperwork.
           </p>
         </div>
         
-        <div class="why-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="why-icon">🏆</div>
-          <h3 class="why-title">100% Certified Professionals</h3>
-          <p class="why-desc">
-            IICRC certified technicians. Fully licensed, insured, and background-checked. All work comes with written warranty.
+        <div class="trust-point" data-aos="fade-up" data-aos-delay="100">
+          <div class="trust-icon-large">🏆</div>
+          <h3 class="trust-point-title">100% Certified</h3>
+          <p class="trust-point-desc">
+            IICRC certified. Licensed, insured, background-checked. Written warranty on all work.
           </p>
         </div>
         
-        <div class="why-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="why-icon">⚡</div>
-          <h3 class="why-title">30-60 Minute Response</h3>
-          <p class="why-desc">
-            Water damage worsens every minute. We arrive fast with industrial equipment ready to work immediately.
-          </p>
-        </div>
-        
-        <div class="why-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="why-icon">🌎</div>
-          <h3 class="why-title">500+ Communities Served</h3>
-          <p class="why-desc">
-            Serving 10 states with 141 certified technicians. Local teams with national resources and expertise.
-          </p>
-        </div>
-        
-        <div class="why-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="why-icon">📱</div>
-          <h3 class="why-title">24/7 Availability</h3>
-          <p class="why-desc">
-            Disasters don't wait. Neither do we. Call anytime, day or night, including holidays. We're always here.
-          </p>
-        </div>
-        
-        <div class="why-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="why-icon">🤝</div>
-          <h3 class="why-title">SnappyX Cares</h3>
-          <p class="why-desc">
-            Community-focused restoration. We give back through charitable work, volunteering, and community service.
+        <div class="trust-point" data-aos="fade-up" data-aos-delay="200">
+          <div class="trust-icon-large">⚡</div>
+          <h3 class="trust-point-title">30-60 Min Response</h3>
+          <p class="trust-point-desc">
+            Fast arrival with industrial equipment. Water damage worsens every minute.
           </p>
         </div>
       </div>
@@ -410,11 +435,10 @@ const certifications = [
     <div class="container">
       <div class="cta-box" data-aos="zoom-in">
         <h2 class="cta-title">
-          🚨 <span class="urgent-text">EMERGENCY?</span> Don't Wait Another Minute!
+          🚨 <span class="urgent-text">EMERGENCY?</span> Don't Wait!
         </h2>
         <p class="cta-subtitle">
-          Every minute increases damage and costs<br>
-          Call now for <strong>immediate dispatch</strong> • Technician arrives in 30-60 minutes
+          Every minute increases damage • Call now for <strong>immediate dispatch</strong>
         </p>
         
         <a href={`tel:${phoneNumber}`} class="hero-cta mega-cta pulse-cta">
@@ -426,7 +450,7 @@ const certifications = [
         </a>
         
         <p class="cta-features">
-          ✅ Available 24/7/365 • ✅ 60-Minute Response • ✅ $0 With Insurance • ✅ Licensed & Insured
+          ✅ 24/7/365 • ✅ 60-Min Response • ✅ $0 With Insurance • ✅ IICRC Certified
         </p>
       </div>
     </div>
@@ -443,13 +467,12 @@ const certifications = [
           </div>
           <p class="footer-tagline">
             <strong>The Paramedics of Property Damage™</strong><br>
-            24/7 Emergency Water Damage Response<br>
-            Serving 500+ US Communities Nationwide
+            24/7 Emergency Water Damage Response
           </p>
           <div class="footer-emergency">
             <span class="emergency-icon">🚨</span>
             <div>
-              <div class="emergency-label">24/7 Emergency Hotline</div>
+              <div class="emergency-label">24/7 Emergency</div>
               <a href={`tel:${phoneNumber}`} class="emergency-phone">{phoneDisplay}</a>
             </div>
           </div>
@@ -459,54 +482,48 @@ const certifications = [
           <h4 class="footer-heading">Coverage Areas</h4>
           <div class="footer-states">
             {states.map(state => (
-              <a href={`/${state.slug}`} class="footer-link">
-                {state.emoji} {state.name}
-              </a>
+              <a href={`/${state.slug}`} class="footer-link">{state.emoji} {state.name}</a>
             ))}
           </div>
         </div>
         
         <div class="footer-col">
-          <h4 class="footer-heading">Emergency Services</h4>
+          <h4 class="footer-heading">Services</h4>
           <div class="footer-links">
             <a href="#" class="footer-link">Water Extraction</a>
-            <a href="#" class="footer-link">Burst Pipe Repair</a>
+            <a href="#" class="footer-link">Burst Pipes</a>
             <a href="#" class="footer-link">Sewage Cleanup</a>
             <a href="#" class="footer-link">Mold Prevention</a>
-            <a href="#" class="footer-link">Flood Cleanup</a>
-            <a href="#" class="footer-link">Storm Damage</a>
+            <a href="#" class="footer-link">Flood Damage</a>
           </div>
         </div>
         
         <div class="footer-col">
           <h4 class="footer-heading">Company</h4>
           <div class="footer-links">
-            <a href="#" class="footer-link">About SnappyX</a>
+            <a href="#" class="footer-link">About Us</a>
             <a href="#" class="footer-link">SnappyX Cares</a>
             <a href="#" class="footer-link">Careers</a>
-            <a href="#" class="footer-link">Blog & Resources</a>
-            <a href="#" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Blog</a>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p class="footer-copyright">
-          © 2025 SnappyX Emergency Restoration Services. All Rights Reserved.
-        </p>
+        <p class="footer-copyright">© 2025 SnappyX. All Rights Reserved.</p>
         <div class="footer-legal">
-          <a href="#" class="footer-link-small">Privacy Policy</a>
+          <a href="#" class="footer-link-small">Privacy</a>
           <span>•</span>
-          <a href="#" class="footer-link-small">Terms of Service</a>
+          <a href="#" class="footer-link-small">Terms</a>
           <span>•</span>
-          <a href="#" class="footer-link-small">License Info</a>
+          <a href="#" class="footer-link-small">License</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Sticky CTA -->
-  <div class="mobile-sticky-cta" id="mobileCTA">
+  <!-- Mobile CTA -->
+  <div class="mobile-sticky-cta">
     <a href={`tel:${phoneNumber}`} class="mobile-cta-btn">
       📞 EMERGENCY: {phoneDisplay}
     </a>
@@ -516,45 +533,67 @@ const certifications = [
 </html>
 
 <style>
-  /* [Previous CSS remains same, adding new sections] */
+  /* [Keep all your existing CSS + add these new sections] */
   
-  /* LOGO TAGLINE */
+  /* Logo improvements */
+  .logo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
   .logo-tagline {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gray-600);
     font-weight: 500;
-    display: block;
-    margin-top: -5px;
+    line-height: 1;
+    margin-top: -3px;
   }
   
-  /* CERTIFICATIONS BAR */
-  .cert-bar {
+  .highlight-gold {
+    color: #fbbf24;
+    font-weight: 800;
+  }
+  
+  /* Certifications */
+  .cert-badges {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
   
-  .cert-item {
+  .cert-badge {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 50px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     color: white;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     font-weight: 600;
+    transition: var(--transition);
   }
   
-  .cert-icon {
-    font-size: 1.5rem;
+  .cert-badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
   }
   
-  /* TESTIMONIALS SECTION */
+  .pulse-cta {
+    animation: pulse-glow 2s infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3); }
+    50% { box-shadow: 0 10px 60px rgba(220, 38, 38, 0.6); }
+  }
+  
+  /* Testimonials */
   .testimonials-section {
     padding: var(--section-padding) 0;
     background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
@@ -584,12 +623,11 @@ const certifications = [
   .testimonial-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 1rem;
   }
   
   .testimonial-stars {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   
   .testimonial-service {
@@ -610,109 +648,92 @@ const certifications = [
   }
   
   .testimonial-author {
-    color: var(--gray-600);
-    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .author-avatar {
+    font-size: 2.5rem;
   }
   
   .testimonial-author strong {
+    display: block;
     color: var(--primary);
     font-weight: 700;
   }
   
-  /* WHY SECTION */
-  .why-section {
+  .author-location {
+    display: block;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
     padding: var(--section-padding) 0;
     background: white;
   }
   
-  .why-grid {
+  .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
   
-  .why-card {
+  .faq-item {
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
-    padding: 2.5rem;
-    border-radius: 20px;
+    padding: 2rem;
+    border-radius: 15px;
     border: 2px solid var(--gray-200);
-    text-align: center;
     transition: var(--transition);
   }
   
-  .why-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+  .faq-item:hover {
     border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.15);
   }
   
-  .why-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .why-title {
-    font-size: 1.5rem;
+  .faq-question {
+    font-size: 1.125rem;
     color: var(--primary);
     margin-bottom: 1rem;
     font-weight: 700;
   }
   
-  .why-desc {
-    color: var(--gray-600);
+  .faq-answer {
+    color: var(--gray-700);
     line-height: 1.7;
   }
   
-  .pulse-cta {
-    animation: pulse-glow 2s infinite;
-  }
-  
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
-    }
-    50% {
-      box-shadow: 0 10px 60px rgba(220, 38, 38, 0.6);
-    }
-  }
-  
-  .highlight-yellow {
-    color: #fbbf24;
-    font-weight: 800;
-  }
-  
-  /* MOBILE RESPONSIVE */
+  /* Mobile Responsive */
   @media (max-width: 768px) {
-    .cert-bar {
-      gap: 1rem;
-    }
-    
-    .cert-item {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-    }
-    
     .logo-tagline {
       display: none;
     }
     
-    .testimonials-grid {
-      grid-template-columns: 1fr;
+    .cert-badges {
+      gap: 0.75rem;
     }
     
-    .why-grid {
+    .cert-badge {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8rem;
+    }
+    
+    .testimonials-grid,
+    .faq-grid {
       grid-template-columns: 1fr;
     }
   }
   
-  /* Copy all previous CSS here... */
+  /* Copy all your existing CSS here too... */
 </style>
 
 <script>
-  // Scroll animations + chatbot initialization
   document.addEventListener('DOMContentLoaded', function() {
+    // AOS simulation
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -100px 0px'
@@ -726,25 +747,27 @@ const certifications = [
       });
     }, observerOptions);
     
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      observer.observe(el);
+    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+    
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        header.style.background = 'rgba(255, 255, 255, 1)';
+        header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      }
     });
     
-    // Tawk.to API customization (after chatbot loads)
+    // Tawk.to customization (when loaded)
     setTimeout(() => {
       if (typeof Tawk_API !== 'undefined') {
         Tawk_API.customStyle = {
-          visibility : {
-            desktop : {
-              position : 'br',
-              xOffset : 20,
-              yOffset : 20
-            },
-            mobile : {
-              position : 'br',
-              xOffset : 10,
-              yOffset : 60
-            }
+          visibility: {
+            desktop: { position: 'br', xOffset: 20, yOffset: 20 },
+            mobile: { position: 'br', xOffset: 10, yOffset: 70 }
           }
         };
       }
