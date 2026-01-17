@@ -1,1651 +1,381 @@
 ---
-// LEVEL 1: Homepage - Scroll-Stopping Emergency Water Damage Site
-// Links to: Level 2 (States) + Level 3 (Suburbs)
-
-const phoneNumber = "+15550123456";
-const phoneDisplay = "(555) 012-3456";
-
-// LEVEL 2: State Hubs (10 states you'll create)
-const states = [
-  { name: "Ohio", slug: "ohio", emoji: "🏛️", cities: 50, status: "12 Active Now" },
-  { name: "New York", slug: "new-york", emoji: "🗽", cities: 60, status: "18 Active Now" },
-  { name: "Florida", slug: "florida", emoji: "🌴", cities: 45, status: "15 Active Now" },
-  { name: "California", slug: "california", emoji: "☀️", cities: 80, status: "22 Active Now" },
-  { name: "Texas", slug: "texas", emoji: "🤠", cities: 40, status: "10 Active Now" },
-  { name: "Michigan", slug: "michigan", emoji: "🚗", cities: 45, status: "14 Active Now" },
-  { name: "Illinois", slug: "illinois", emoji: "🌃", cities: 35, status: "11 Active Now" },
-  { name: "Massachusetts", slug: "massachusetts", emoji: "🎓", cities: 50, status: "16 Active Now" },
-  { name: "New Jersey", slug: "new-jersey", emoji: "🏖️", cities: 60, status: "17 Active Now" },
-  { name: "Connecticut", slug: "connecticut", emoji: "🏛️", cities: 40, status: "13 Active Now" }
-];
-
-// LEVEL 3: Top Money Suburbs (create these pages next)
-const topSuburbs = [
-  { name: "Scarsdale", state: "NY", slug: "new-york/scarsdale", time: "2 hrs ago", urgent: true },
-  { name: "Chagrin Falls", state: "OH", slug: "ohio/chagrin-falls", time: "47 min ago", urgent: true },
-  { name: "Zionsville", state: "IN", slug: "indiana/zionsville", time: "1 hr ago", urgent: false },
-  { name: "Birmingham", state: "MI", slug: "michigan/birmingham", time: "3 hrs ago", urgent: false },
-  { name: "Pinecrest", state: "FL", slug: "florida/pinecrest", time: "5 hrs ago", urgent: false },
-  { name: "Orinda", state: "CA", slug: "california/orinda", time: "45 min ago", urgent: true },
-  { name: "Wellesley", state: "MA", slug: "massachusetts/wellesley", time: "2 hrs ago", urgent: false },
-  { name: "Hinsdale", state: "IL", slug: "illinois/hinsdale", time: "4 hrs ago", urgent: false },
-  { name: "Greenwich", state: "CT", slug: "connecticut/greenwich", time: "1 hr ago", urgent: false },
-  { name: "McLean", state: "VA", slug: "virginia/mclean", time: "3 hrs ago", urgent: false },
-  { name: "Los Altos", state: "CA", slug: "california/los-altos", time: "6 hrs ago", urgent: false },
-  { name: "Highland Park", state: "IL", slug: "illinois/highland-park", time: "2 hrs ago", urgent: false }
-];
-
-const services = [
-  { icon: "💧", title: "Water Extraction", desc: "Powerful pumps remove standing water immediately" },
-  { icon: "❄️", title: "Burst Pipes", desc: "Fix leaks and dry damage from frozen pipes" },
-  { icon: "💩", title: "Sewage Cleanup", desc: "Safe hazardous waste removal and sanitization" },
-  { icon: "🦠", title: "Mold Prevention", desc: "Industrial drying prevents toxic mold growth" }
-];
+// src/pages/index.astro
+// Layout and configuration
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SnappyX: America's trusted 24/7 water damage restoration company serving all 50 states. Emergency response, IICRC-certified technicians, and insurance assistance.">
+  <title>SnappyX | 24/7 Nationwide Water Damage Restoration Company</title>
   
-  <!-- SEO Meta Tags -->
-  <title>🚨 Emergency Water Damage Restoration | 60-Min Response | SnappyX</title>
-  <meta name="description" content="Emergency water damage restoration across 500+ US communities. 60-minute response, $0 out of pocket with insurance, 24/7 service. Licensed technicians arrive fast. Call now!">
-  <meta name="keywords" content="emergency water damage, water restoration, flood cleanup, burst pipe repair, 24/7 water damage">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="🚨 Emergency Water Damage - 60 Min Response">
-  <meta property="og:description" content="Fast emergency water damage service. Available 24/7 in 500+ communities.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://snappyx.pro">
-  
-  <!-- Schema Markup - EmergencyService -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EmergencyService",
-    "name": "SnappyX Emergency Water Restoration",
-    "description": "24/7 emergency water damage restoration service",
-    "telephone": "{phoneNumber}",
-    "url": "https://snappyx.pro",
-    "image": "https://snappyx.pro/logo.png",
-    "priceRange": "$$",
-    "areaServed": [
-      {
-        "@type": "State",
-        "name": "Ohio"
-      },
-      {
-        "@type": "State",
-        "name": "New York"
-      },
-      {
-        "@type": "State",
-        "name": "Florida"
-      },
-      {
-        "@type": "State",
-        "name": "California"
-      },
-      {
-        "@type": "State",
-        "name": "Texas"
-      },
-      {
-        "@type": "State",
-        "name": "Michigan"
-      },
-      {
-        "@type": "State",
-        "name": "Illinois"
-      },
-      {
-        "@type": "State",
-        "name": "Massachusetts"
-      },
-      {
-        "@type": "State",
-        "name": "New Jersey"
-      },
-      {
-        "@type": "State",
-        "name": "Connecticut"
-      }
-    ],
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceType": "Emergency Water Damage Restoration",
-      "availableLanguage": {
-        "@type": "Language",
-        "name": "English"
-      }
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Emergency Water Damage Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Water Extraction",
-            "description": "Emergency water removal and extraction services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Burst Pipe Repair",
-            "description": "Emergency frozen and burst pipe repair services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Sewage Cleanup",
-            "description": "Hazardous sewage backup cleanup and sanitization"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mold Prevention",
-            "description": "Professional drying and mold prevention services"
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'trust-blue': '#0056b3',
+            'emergency-red': '#d9534f',
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
           }
         }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "2847"
+      }
     }
-  }
   </script>
   
-  <!-- Preload Critical Assets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- AlpineJS for interactivity (optional) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
 </head>
 
-<body>
-
-  <!-- ============================================ -->
-  <!-- STICKY HEADER (Always Visible) -->
-  <!-- ============================================ -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="/" class="logo">
-        <span class="logo-icon">⚡</span>
-        <span class="logo-text">SnappyX</span>
-        <span class="logo-badge">24/7</span>
-      </a>
+<body class="font-inter text-gray-800 bg-white">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold text-trust-blue">SnappyX</h1>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="font-medium hover:text-trust-blue transition">Home</a>
+          <a href="#" class="font-medium hover:text-trust-blue transition">About</a>
+          <a href="#" class="font-medium hover:text-trust-blue transition">Services</a>
+          <a href="#" class="font-medium hover:text-trust-blue transition">Contact</a>
+          <a href="tel:5550123456" class="bg-emergency-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition">
+            Call Now: (555) 012-3456
+          </a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <button class="md:hidden" @click="open = !open" x-data="{ open: false }">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
       
-      <a href={`tel:${phoneNumber}`} class="header-cta">
-        <span class="cta-icon">📞</span>
-        <span class="cta-text">{phoneDisplay}</span>
-      </a>
-    </nav>
+      <!-- Mobile Navigation -->
+      <div class="md:hidden mt-4" x-show="open" x-transition>
+        <div class="flex flex-col space-y-4">
+          <a href="#" class="font-medium py-2">Home</a>
+          <a href="#" class="font-medium py-2">About</a>
+          <a href="#" class="font-medium py-2">Services</a>
+          <a href="#" class="font-medium py-2">Contact</a>
+          <a href="tel:5550123456" class="bg-emergency-red text-white px-6 py-3 rounded-lg font-semibold text-center">
+            Call Now: (555) 012-3456
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- ============================================ -->
-  <!-- SECTION 1: HERO (Above Fold) -->
-  <!-- ============================================ -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    
-    <div class="container hero-content">
-      <!-- Emergency Badge -->
-      <div class="emergency-badge" data-aos="fade-down">
-        <span class="badge-pulse"></span>
-        🚨 EMERGENCY SERVICE AVAILABLE NOW
-      </div>
-      
-      <!-- Main Headline -->
-      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-        FLOODED BASEMENT?<br>
-        <span class="highlight">WE ARRIVE IN 60 MINUTES</span>
-      </h1>
-      
-      <!-- Subheadline -->
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-        24/7 Emergency Water Damage Restoration<br>
-        <strong>$0 Out of Pocket</strong> with Insurance • Licensed & Insured
-      </p>
-      
-      <!-- Primary CTA -->
-      <a href={`tel:${phoneNumber}`} class="hero-cta" data-aos="zoom-in" data-aos-delay="300">
-        <span class="cta-icon-large">📞</span>
-        <div class="cta-content">
-          <span class="cta-label">CALL NOW FOR IMMEDIATE HELP</span>
-          <span class="cta-number">{phoneDisplay}</span>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-r from-trust-blue to-blue-800 text-white py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">24/7 Water Damage Restoration Company Serving All 50 States</h1>
+          
+          <p class="text-lg md:text-xl mb-8 opacity-90">
+            When water damage strikes, every minute counts. SnappyX provides nationwide emergency water damage restoration services with local, licensed teams ready to respond 24/7. Our certified technicians utilize advanced extraction and drying technology to mitigate damage and restore your property. We serve residential and commercial clients across America, maintaining consistent quality standards and rapid response times regardless of location. Our comprehensive approach includes water extraction, structural drying, mold prevention, and insurance claim assistance—all backed by IICRC certification and extensive industry experience.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:5550123456" class="bg-emergency-red hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition duration-300">
+              Get Help Now
+            </a>
+            <a href="#services" class="bg-white text-trust-blue hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-center text-lg transition duration-300">
+              Our Services
+            </a>
+          </div>
         </div>
-      </a>
-      
-      <!-- Live Status Bar -->
-      <div class="live-status" data-aos="fade-up" data-aos-delay="400">
-        <span class="status-dot"></span>
-        <span class="status-text"><strong>18 Technicians</strong> Available Right Now</span>
       </div>
-      
-      <!-- Coverage Area -->
-      <p class="coverage" data-aos="fade-up" data-aos-delay="500">
-        🗺️ Serving <strong>500+ Communities</strong> Across 10 States
-      </p>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
-      <span>Scroll to see coverage</span>
-      <div class="scroll-arrow">↓</div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================ -->
-  <!-- SECTION 2: TRUST BAR (Social Proof) -->
-  <!-- ============================================ -->
-  <section class="trust-bar" data-aos="fade-in">
-    <div class="container">
-      <div class="trust-items">
-        <div class="trust-item">
-          <span class="trust-icon">⭐</span>
-          <div class="trust-content">
-            <span class="trust-value">4.9/5</span>
-            <span class="trust-label">Average Rating</span>
-          </div>
-        </div>
+    <!-- CORE SERVICES GRID -->
+    <section id="services" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Professional Water Damage Restoration Services</h2>
         
-        <div class="trust-divider"></div>
-        
-        <div class="trust-item">
-          <span class="trust-icon">📞</span>
-          <div class="trust-content">
-            <span class="trust-value">2,847</span>
-            <span class="trust-label">Calls Today</span>
-          </div>
-        </div>
-        
-        <div class="trust-divider"></div>
-        
-        <div class="trust-item">
-          <span class="trust-icon">⏱️</span>
-          <div class="trust-content">
-            <span class="trust-value">47 Min</span>
-            <span class="trust-label">Avg Response</span>
-          </div>
-        </div>
-        
-        <div class="trust-divider"></div>
-        
-        <div class="trust-item">
-          <span class="trust-icon">✅</span>
-          <div class="trust-content">
-            <span class="trust-value">15,000+</span>
-            <span class="trust-label">Jobs Completed</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SECTION 3: STATE SELECTOR (LEVEL 2 Links) -->
-  <!-- ============================================ -->
-  <section class="states-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">
-          Select Your State for <span class="highlight">Immediate Service</span>
-        </h2>
-        <p class="section-subtitle">
-          Emergency teams standing by in your area • Click your state below
-        </p>
-      </div>
-      
-      <div class="states-grid">
-        {states.map((state, index) => (
-          <a 
-            href={`/${state.slug}`} 
-            class="state-card"
-            data-aos="zoom-in"
-            data-aos-delay={index * 50}
-          >
-            <div class="state-emoji">{state.emoji}</div>
-            <h3 class="state-name">{state.name}</h3>
-            <p class="state-cities">{state.cities} Cities Covered</p>
-            <div class="state-status">
-              <span class="status-dot-small"></span>
-              {state.status}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Water Damage Restoration -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-trust-blue text-white rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">💧</span>
             </div>
-            <span class="state-arrow">→</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SECTION 4: EMERGENCY SERVICES -->
-  <!-- ============================================ -->
-  <section class="services-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">
-          Our <span class="highlight">Emergency Services</span>
-        </h2>
-        <p class="section-subtitle">
-          Professional restoration for every water emergency
-        </p>
-      </div>
-      
-      <div class="services-grid">
-        {services.map((service, index) => (
-          <div 
-            class="service-card"
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-          >
-            <div class="service-icon">{service.icon}</div>
-            <h3 class="service-title">{service.title}</h3>
-            <p class="service-desc">{service.desc}</p>
-            <div class="service-badge">24/7 Available</div>
+            <h3 class="text-xl font-bold mb-3">Water Damage Restoration</h3>
+            <p class="text-gray-600">
+              Comprehensive restoration services for all water damage scenarios. Our systematic approach includes assessment, water extraction, drying, and restoration to pre-loss conditions using industry-leading equipment and proven techniques.
+            </p>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- ============================================ -->
-  <!-- SECTION 5: RECENTLY SERVED (LEVEL 3 Links) -->
-  <!-- ============================================ -->
-  <section class="suburbs-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">
-          <span class="highlight">Recently Served</span> Emergency Areas
-        </h2>
-        <p class="section-subtitle">
-          🔴 Live dispatch activity • Your area is covered!
-        </p>
-      </div>
-      
-      <div class="suburbs-grid">
-        {topSuburbs.map((suburb, index) => (
-          <a 
-            href={`/${suburb.slug}`} 
-            class={`suburb-card ${suburb.urgent ? 'urgent' : ''}`}
-            data-aos="slide-right"
-            data-aos-delay={index * 50}
-          >
-            <div class="suburb-header">
-              <div class="suburb-indicator">
-                <span class="indicator-dot"></span>
-                <span class="indicator-time">{suburb.time}</span>
-              </div>
-              {suburb.urgent && <span class="urgent-badge">🔥 URGENT</span>}
+          <!-- Emergency Water Removal -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-emergency-red text-white rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🚨</span>
             </div>
-            
-            <h3 class="suburb-name">{suburb.name}, {suburb.state}</h3>
-            <p class="suburb-meta">Emergency water damage call completed</p>
-            
-            <span class="suburb-arrow">View Coverage →</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SECTION 6: WHY TRUST US -->
-  <!-- ============================================ -->
-  <section class="trust-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">
-          Why Homeowners <span class="highlight">Trust SnappyX</span>
-        </h2>
-      </div>
-      
-      <div class="trust-grid">
-        <div class="trust-point" data-aos="fade-up" data-aos-delay="0">
-          <div class="trust-icon-large">💰</div>
-          <h3 class="trust-point-title">$0 Out of Pocket</h3>
-          <p class="trust-point-desc">
-            We bill your insurance directly. Most homeowners pay nothing. We handle all paperwork and claims.
-          </p>
-        </div>
-        
-        <div class="trust-point" data-aos="fade-up" data-aos-delay="100">
-          <div class="trust-icon-large">🛡️</div>
-          <h3 class="trust-point-title">Licensed & Insured</h3>
-          <p class="trust-point-desc">
-            IICRC certified technicians. Fully licensed and insured. All work guaranteed with written warranty.
-          </p>
-        </div>
-        
-        <div class="trust-point" data-aos="fade-up" data-aos-delay="200">
-          <div class="trust-icon-large">⚡</div>
-          <h3 class="trust-point-title">30-60 Min Response</h3>
-          <p class="trust-point-desc">
-            Water damage worsens every minute. We arrive fast with industrial equipment ready to work.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SECTION 7: FINAL CTA (Conversion Zone) -->
-  <!-- ============================================ -->
-  <section class="final-cta">
-    <div class="container">
-      <div class="cta-box" data-aos="zoom-in">
-        <h2 class="cta-title">
-          🚨 <span class="urgent-text">EMERGENCY?</span> Don't Wait!
-        </h2>
-        <p class="cta-subtitle">
-          Every minute increases damage and costs<br>
-          Call now for <strong>immediate dispatch</strong>
-        </p>
-        
-        <a href={`tel:${phoneNumber}`} class="hero-cta mega-cta">
-          <span class="cta-icon-large">📞</span>
-          <div class="cta-content">
-            <span class="cta-label">TAP TO CALL NOW</span>
-            <span class="cta-number">{phoneDisplay}</span>
+            <h3 class="text-xl font-bold mb-3">Emergency Water Removal</h3>
+            <p class="text-gray-600">
+              Immediate response for water extraction to prevent secondary damage. Our teams arrive with powerful truck-mounted extraction units and submersible pumps to remove standing water quickly and efficiently.
+            </p>
           </div>
-        </a>
-        
-        <p class="cta-features">
-          ✅ Available 24/7 • ✅ 60-Minute Response • ✅ $0 With Insurance
-        </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============================================ -->
-  <!-- FOOTER -->
-  <!-- ============================================ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <!-- Brand -->
-        <div class="footer-col">
-          <div class="footer-logo">
-            <span class="logo-icon">⚡</span>
-            <span class="logo-text">SnappyX</span>
+          <!-- Flood Cleanup -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-trust-blue text-white rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🌊</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Flood Cleanup</h3>
+            <p class="text-gray-600">
+              Specialized cleanup services for flood-affected properties. We handle contaminated water situations with appropriate safety protocols, thorough cleaning, and antimicrobial treatments to ensure a healthy environment.
+            </p>
           </div>
-          <p class="footer-tagline">
-            24/7 Emergency Water Damage Response<br>
-            Serving 500+ US Communities
-          </p>
-          <div class="footer-emergency">
-            <span class="emergency-icon">🚨</span>
+
+          <!-- Structural Drying -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-trust-blue text-white rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🏗️</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Structural Drying</h3>
+            <p class="text-gray-600">
+              Advanced drying techniques for walls, floors, and building materials. Using moisture mapping technology and industrial dehumidifiers, we achieve proper drying to prevent warping, swelling, and mold growth.
+            </p>
+          </div>
+
+          <!-- Mold Mitigation -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+            <div class="w-12 h-12 bg-trust-blue text-white rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🦠</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Mold Mitigation</h3>
+            <p class="text-gray-600">
+              Professional mold remediation following IICRC S520 standards. We contain affected areas, remove contaminated materials safely, clean surfaces with EPA-approved solutions, and apply preventive treatments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST & EEAT BLOCK -->
+    <section class="py-16 bg-trust-blue text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Why Property Owners Nationwide Trust SnappyX</h2>
+          
+          <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Trust Points -->
             <div>
-              <div class="emergency-label">Emergency Hotline</div>
-              <a href={`tel:${phoneNumber}`} class="emergency-phone">{phoneDisplay}</a>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <span class="text-emergency-red text-2xl mr-3">✓</span>
+                  <span class="text-lg"><strong>Licensed & Insured:</strong> Fully licensed water damage restoration company with comprehensive liability insurance and workers' compensation coverage.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emergency-red text-2xl mr-3">✓</span>
+                  <span class="text-lg"><strong>IICRC-Certified Technicians:</strong> All restoration specialists hold current Institute of Inspection, Cleaning and Restoration Certification credentials.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emergency-red text-2xl mr-3">✓</span>
+                  <span class="text-lg"><strong>Insurance Claim Assistance:</strong> We work directly with all major insurance providers and help document damages for claim processing.</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emergency-red text-2xl mr-3">✓</span>
+                  <span class="text-lg"><strong>24/7/365 Response:</strong> Our emergency dispatch center operates around the clock, including holidays, with local teams nationwide.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Stats -->
+            <div class="bg-white text-gray-900 p-8 rounded-xl">
+              <h3 class="text-2xl font-bold mb-8 text-center">Our National Impact</h3>
+              <div class="stats-grid">
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-trust-blue mb-2">15+</div>
+                  <div class="text-gray-600">Years in Business</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-trust-blue mb-2">50K+</div>
+                  <div class="text-gray-600">Jobs Handled</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-trust-blue mb-2">60</div>
+                  <div class="text-gray-600">Min Avg Response</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-trust-blue mb-2">50</div>
+                  <div class="text-gray-600">States Served</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- MICRO "WHO WE ARE" -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">About SnappyX Restoration</h2>
+          <p class="text-lg text-gray-700 mb-8">
+            SnappyX is a legally registered national restoration corporation headquartered in the United States. Our brand entity maintains strict operational standards across all 50 states, ensuring consistent quality and professional service delivery. Every technician undergoes rigorous background checks, continuous training, and must maintain active certifications. We operate as a unified national brand with localized service delivery teams, allowing us to provide rapid emergency response while maintaining corporate accountability and standardized service protocols.
+          </p>
+          <p class="text-lg text-gray-700">
+            Our corporate structure enables us to maintain consistent pricing, warranty coverage, and quality assurance nationwide while complying with all state and local regulations. We invest in ongoing technician education, equipment upgrades, and industry research to remain at the forefront of restoration technology and methodology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATES WE SERVE -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">States We Serve</h2>
         
-        <!-- Coverage States -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Coverage Areas</h4>
-          <div class="footer-states">
-            {states.map(state => (
-              <a href={`/${state.slug}`} class="footer-link">
-                {state.emoji} {state.name}
-              </a>
-            ))}
-          </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+          <!-- 24 popular states -->
+          {['Texas', 'Florida', 'California', 'New York', 'Ohio', 'Pennsylvania', 'Illinois', 'Georgia', 'North Carolina', 'Michigan', 'New Jersey', 'Virginia', 'Washington', 'Arizona', 'Tennessee', 'Massachusetts', 'Indiana', 'Missouri', 'Maryland', 'Wisconsin', 'Colorado', 'Minnesota', 'South Carolina', 'Alabama'].map(state => (
+            <a 
+              href={`/services/${state.toLowerCase().replace(' ', '-')}`} 
+              class="bg-white hover:bg-trust-blue hover:text-white text-center py-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 font-medium"
+            >
+              {state}
+            </a>
+          ))}
         </div>
         
-        <!-- Services -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Emergency Services</h4>
-          <div class="footer-links">
-            <a href="#" class="footer-link">Water Extraction</a>
-            <a href="#" class="footer-link">Burst Pipe Repair</a>
-            <a href="#" class="footer-link">Sewage Cleanup</a>
-            <a href="#" class="footer-link">Mold Prevention</a>
-            <a href="#" class="footer-link">Flood Cleanup</a>
-            <a href="#" class="footer-link">Storm Damage</a>
-          </div>
+        <p class="text-center mt-8 text-gray-600">
+          Plus all other U.S. states and territories. We maintain licensed restoration teams nationwide.
+        </p>
+      </div>
+    </section>
+
+    <!-- EMERGENCY CTA -->
+    <section class="py-16 bg-emergency-red text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Call Now for Immediate Water Damage Help</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Don't wait—water damage worsens quickly. Our emergency dispatch connects you to local certified technicians.
+        </p>
+        <a href="tel:5550123456" class="inline-block bg-white text-emergency-red hover:bg-gray-100 text-3xl md:text-4xl font-bold py-6 px-12 rounded-2xl shadow-2xl transition duration-300">
+          (555) 012-3456
+        </a>
+        <p class="mt-6 text-lg">Available 24 hours, 7 days a week, including holidays</p>
+      </div>
+    </section>
+
+    <!-- MINI FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <details class="border rounded-lg p-4 hover:shadow-md transition">
+            <summary class="font-bold text-lg cursor-pointer flex justify-between items-center">
+              What is your average emergency response time?
+              <span class="text-trust-blue text-2xl">+</span>
+            </summary>
+            <p class="mt-3 text-gray-700 pt-3 border-t">
+              Our national average emergency response time is 60 minutes or less. When you call our emergency hotline, we immediately dispatch the nearest available certified team from our nationwide network. Response times vary by location and weather conditions, but we maintain strategically positioned teams to ensure rapid service across all 50 states.
+            </p>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="border rounded-lg p-4 hover:shadow-md transition">
+            <summary class="font-bold text-lg cursor-pointer flex justify-between items-center">
+              Do you work directly with insurance companies?
+              <span class="text-trust-blue text-2xl">+</span>
+            </summary>
+            <p class="mt-3 text-gray-700 pt-3 border-t">
+              Yes, we work directly with all major insurance providers. Our team assists with the entire claims process, including detailed documentation, moisture mapping, and proper paperwork. We follow insurance industry standards and can often bill your insurance company directly, minimizing your out-of-pocket expenses and simplifying the restoration process.
+            </p>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="border rounded-lg p-4 hover:shadow-md transition">
+            <summary class="font-bold text-lg cursor-pointer flex justify-between items-center">
+              What types of water damage do you handle?
+              <span class="text-trust-blue text-2xl">+</span>
+            </summary>
+            <p class="mt-3 text-gray-700 pt-3 border-t">
+              We handle all categories of water damage: Category 1 (clean water from supply lines), Category 2 (gray water with some contamination), and Category 3 (black water with severe contamination). Our services address flooding, burst pipes, sewage backups, appliance leaks, storm damage, and foundation water intrusion. All contaminated water situations are handled with appropriate safety protocols and equipment.
+            </p>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="border rounded-lg p-4 hover:shadow-md transition">
+            <summary class="font-bold text-lg cursor-pointer flex justify-between items-center">
+              Are your technicians certified and background-checked?
+              <span class="text-trust-blue text-2xl">+</span>
+            </summary>
+            <p class="mt-3 text-gray-700 pt-3 border-t">
+              Absolutely. Every SnappyX technician holds current IICRC (Institute of Inspection, Cleaning and Restoration Certification) credentials. All team members undergo comprehensive background checks, drug screening, and continuous training. We maintain strict hiring standards and invest in ongoing education to ensure our teams are updated on the latest restoration techniques and safety protocols.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold mb-2">SnappyX</h3>
+          <p class="text-gray-400">Nationwide Water Damage Restoration</p>
+          <p class="text-gray-400 mt-4">© 2026 SnappyX Restoration. All rights reserved.</p>
+        </div>
+        
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+          <a href="/privacy" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+          <a href="/terms" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+          <a href="/sitemap" class="text-gray-400 hover:text-white transition">Sitemap</a>
+          <a href="/contact" class="text-gray-400 hover:text-white transition">Contact Us</a>
         </div>
       </div>
       
-      <!-- Bottom Bar -->
-      <div class="footer-bottom">
-        <p class="footer-copyright">
-          © 2025 SnappyX Emergency Restoration Services. All Rights Reserved.
-        </p>
-        <div class="footer-legal">
-          <a href="#" class="footer-link-small">Privacy Policy</a>
-          <span>•</span>
-          <a href="#" class="footer-link-small">Terms of Service</a>
-          <span>•</span>
-          <a href="#" class="footer-link-small">License Info</a>
-        </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>SnappyX is a registered trademark. Services available in all 50 United States. License numbers available upon request.</p>
+        <p class="mt-2">This website does not constitute an emergency service. In life-threatening situations, call 911 immediately.</p>
       </div>
     </div>
   </footer>
-
-  <!-- Mobile Sticky CTA -->
-  <div class="mobile-sticky-cta" id="mobileCTA">
-    <a href={`tel:${phoneNumber}`} class="mobile-cta-btn">
-      📞 CALL NOW: {phoneDisplay}
-    </a>
-  </div>
-
 </body>
 </html>
-
-<style>
-  /* ============================================ */
-  /* RESET & BASE */
-  /* ============================================ */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  :root {
-    /* Colors */
-    --primary: #1e40af;
-    --primary-dark: #1e3a8a;
-    --secondary: #dc2626;
-    --secondary-dark: #b91c1c;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-900: #111827;
-    
-    /* Spacing */
-    --container-width: 1200px;
-    --section-padding: 5rem;
-    
-    /* Transitions */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--gray-900);
-    overflow-x: hidden;
-    background: white;
-  }
-  
-  .container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  
-  /* ============================================ */
-  /* HEADER (Sticky) */
-  /* ============================================ */
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    animation: slideDown 0.5s ease-out;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
-  
-  .logo-icon {
-    font-size: 2rem;
-    animation: pulse 2s infinite;
-  }
-  
-  .logo-badge {
-    background: var(--secondary);
-    color: white;
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-weight: 700;
-  }
-  
-  .header-cta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-    color: white;
-    padding: 0.875rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-    transition: var(--transition);
-  }
-  
-  .header-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(220, 38, 38, 0.4);
-  }
-  
-  .cta-icon {
-    font-size: 1.25rem;
-  }
-  
-  /* ============================================ */
-  /* HERO SECTION */
-  /* ============================================ */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    padding: 8rem 1.5rem 4rem;
-    overflow: hidden;
-  }
-  
-  .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-    z-index: -2;
-  }
-  
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.3) 0%, transparent 50%);
-    animation: bgFloat 20s ease-in-out infinite;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-  }
-  
-  .emergency-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(220, 38, 38, 0.95);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
-  }
-  
-  .badge-pulse {
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
-  }
-  
-  .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    color: white;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  .highlight {
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(1.125rem, 3vw, 1.5rem);
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 2.5rem;
-    font-weight: 400;
-  }
-  
-  .hero-subtitle strong {
-    color: #fbbf24;
-    font-weight: 700;
-  }
-  
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-    color: white;
-    padding: 1.75rem 3rem;
-    border-radius: 60px;
-    text-decoration: none;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    transition: var(--transition);
-    margin-bottom: 2rem;
-  }
-  
-  .hero-cta:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-  }
-  
-  .cta-icon-large {
-    font-size: 2.5rem;
-  }
-  
-  .cta-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .cta-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    opacity: 0.9;
-    letter-spacing: 1px;
-  }
-  
-  .cta-number {
-    font-size: 1.75rem;
-    font-weight: 800;
-  }
-  
-  .live-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(16, 185, 129, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    border: 2px solid rgba(16, 185, 129, 0.3);
-    color: white;
-    margin-bottom: 1.5rem;
-  }
-  
-  .status-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--success);
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
-  }
-  
-  .coverage {
-    font-size: 1.25rem;
-    color: white;
-    opacity: 0.9;
-  }
-  
-  .coverage strong {
-    color: #fbbf24;
-  }
-  
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    font-size: 0.875rem;
-    opacity: 0.8;
-  }
-  
-  .scroll-arrow {
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-    margin-top: 0.5rem;
-  }
-  
-  /* ============================================ */
-  /* TRUST BAR */
-  /* ============================================ */
-  .trust-bar {
-    background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--gray-200);
-  }
-  
-  .trust-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .trust-icon {
-    font-size: 2.5rem;
-  }
-  
-  .trust-content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .trust-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary);
-  }
-  
-  .trust-label {
-    font-size: 0.875rem;
-    color: var(--gray-600);
-  }
-  
-  .trust-divider {
-    width: 1px;
-    height: 50px;
-    background: var(--gray-300);
-  }
-  
-  /* ============================================ */
-  /* STATES SECTION */
-  /* ============================================ */
-  .states-section {
-    padding: var(--section-padding) 0;
-    background: white;
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1.25rem;
-    color: var(--gray-600);
-  }
-  
-  .states-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .state-card {
-    background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
-    padding: 2rem;
-    border-radius: 20px;
-    text-decoration: none;
-    color: inherit;
-    border: 2px solid var(--gray-200);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-  }
-  
-  .state-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #3b82f6 0%, var(--primary) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-  }
-  
-  .state-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
-    border-color: var(--primary);
-  }
-  
-  .state-card:hover::before {
-    opacity: 1;
-  }
-  
-  .state-card:hover * {
-    color: white !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-  }
-  
-  .state-emoji {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .state-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .state-cities {
-    color: var(--gray-600);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .state-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(16, 185, 129, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--success);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    position: relative;
-    z-index: 1;
-  }
-  
-  .status-dot-small {
-    width: 8px;
-    height: 8px;
-    background: var(--success);
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
-  }
-  
-  .state-arrow {
-    position: absolute;
-    bottom: 1rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: var(--transition);
-    z-index: 1;
-  }
-  
-  .state-card:hover .state-arrow {
-    opacity: 1;
-    right: 1rem;
-  }
-  
-  /* ============================================ */
-  /* SERVICES SECTION */
-  /* ============================================ */
-  .services-section {
-    padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-  }
-  
-  .service-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: var(--transition);
-    border: 2px solid transparent;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary);
-  }
-  
-  .service-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .service-title {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  
-  .service-desc {
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  
-  .service-badge {
-    display: inline-block;
-    background: var(--success);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-  
-  /* ============================================ */
-  /* SUBURBS SECTION */
-  /* ============================================ */
-  .suburbs-section {
-    padding: var(--section-padding) 0;
-    background: white;
-  }
-  
-  .suburbs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .suburb-card {
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-decoration: none;
-    color: inherit;
-    border: 2px solid #bfdbfe;
-    transition: var(--transition);
-  }
-  
-  .suburb-card.urgent {
-    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-    border-color: #fecaca;
-  }
-  
-  .suburb-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-    border-color: var(--primary);
-  }
-  
-  .suburb-card.urgent:hover {
-    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
-    border-color: var(--secondary);
-  }
-  
-  .suburb-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .suburb-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    color: var(--success);
-    font-weight: 600;
-  }
-  
-  .indicator-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--success);
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
-  }
-  
-  .urgent-badge {
-    background: var(--secondary);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-  
-  .suburb-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-  
-  .suburb-meta {
-    font-size: 0.9rem;
-    color: var(--gray-600);
-    margin-bottom: 1rem;
-  }
-  
-  .suburb-arrow {
-    font-size: 0.95rem;
-    color: var(--primary);
-    font-weight: 600;
-  }
-  
-  /* ============================================ */
-  /* TRUST SECTION */
-  /* ============================================ */
-  .trust-section {
-    padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  }
-  
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-  }
-  
-  .trust-point {
-    text-align: center;
-  }
-  
-  .trust-icon-large {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .trust-point-title {
-    font-size: 1.75rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  
-  .trust-point-desc {
-    color: var(--gray-700);
-    font-size: 1.125rem;
-    line-height: 1.7;
-  }
-  
-  /* ============================================ */
-  /* FINAL CTA */
-  /* ============================================ */
-  .final-cta {
-    padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .final-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%);
-    animation: bgFloat 15s ease-in-out infinite;
-  }
-  
-  .cta-box {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 4rem 2rem;
-    border-radius: 30px;
-    text-align: center;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    z-index: 1;
-  }
-  
-  .cta-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: white;
-    font-weight: 800;
-    margin-bottom: 1rem;
-  }
-  
-  .urgent-text {
-    color: #fbbf24;
-  }
-  
-  .cta-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 2.5rem;
-  }
-  
-  .cta-subtitle strong {
-    color: #fbbf24;
-  }
-  
-  .mega-cta {
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-features {
-    color: white;
-    font-size: 1.125rem;
-  }
-  
-  /* ============================================ */
-  /* FOOTER */
-  /* ============================================ */
-  .footer {
-    background: var(--gray-900);
-    color: var(--gray-300);
-    padding: 4rem 0 2rem;
-  }
-  
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-  
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-tagline {
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
-  
-  .footer-emergency {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--gray-800);
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  
-  .emergency-icon {
-    font-size: 2rem;
-  }
-  
-  .emergency-label {
-    font-size: 0.875rem;
-    color: var(--gray-400);
-  }
-  
-  .emergency-phone {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--success);
-    text-decoration: none;
-  }
-  
-  .emergency-phone:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-heading {
-    color: white;
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  
-  .footer-states,
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .footer-link {
-    color: var(--gray-400);
-    text-decoration: none;
-    transition: var(--transition);
-  }
-  
-  .footer-link:hover {
-    color: var(--primary);
-    padding-left: 0.5rem;
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid var(--gray-800);
-    padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .footer-copyright {
-    font-size: 0.9rem;
-    color: var(--gray-500);
-  }
-  
-  .footer-legal {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .footer-link-small {
-    color: var(--gray-500);
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-  
-  .footer-link-small:hover {
-    color: white;
-  }
-  
-  /* ============================================ */
-  /* MOBILE STICKY CTA */
-  /* ============================================ */
-  .mobile-sticky-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: white;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    display: none;
-  }
-  
-  .mobile-cta-btn {
-    display: block;
-    width: 100%;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-    color: white;
-    padding: 1.25rem;
-    border-radius: 50px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.125rem;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-  }
-  
-  /* ============================================ */
-  /* ANIMATIONS */
-  /* ============================================ */
-  @keyframes slideDown {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-  }
-  
-  @keyframes pulse-dot {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.3);
-    }
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes bgFloat {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(50px, 50px) scale(1.1);
-    }
-  }
-  
-  /* AOS Animation Library (Add this via CDN or package) */
-  [data-aos] {
-    opacity: 0;
-    transition-property: opacity, transform;
-    transition-duration: 0.6s;
-  }
-  
-  [data-aos].aos-animate {
-    opacity: 1;
-  }
-  
-  [data-aos="fade-up"] {
-    transform: translateY(30px);
-  }
-  
-  [data-aos="fade-up"].aos-animate {
-    transform: translateY(0);
-  }
-  
-  [data-aos="fade-down"] {
-    transform: translateY(-30px);
-  }
-  
-  [data-aos="fade-down"].aos-animate {
-    transform: translateY(0);
-  }
-  
-  [data-aos="zoom-in"] {
-    transform: scale(0.9);
-  }
-  
-  [data-aos="zoom-in"].aos-animate {
-    transform: scale(1);
-  }
-  
-  [data-aos="slide-right"] {
-    transform: translateX(-50px);
-  }
-  
-  [data-aos="slide-right"].aos-animate {
-    transform: translateX(0);
-  }
-  
-  /* ============================================ */
-  /* RESPONSIVE */
-  /* ============================================ */
-  @media (max-width: 768px) {
-    :root {
-      --section-padding: 3rem;
-    }
-    
-    .hero {
-      min-height: auto;
-      padding: 6rem 1.5rem 3rem;
-    }
-    
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.125rem;
-    }
-    
-    .hero-cta {
-      padding: 1.25rem 2rem;
-    }
-    
-    .cta-number {
-      font-size: 1.25rem;
-    }
-    
-    .trust-items {
-      gap: 1.5rem;
-    }
-    
-    .trust-divider {
-      display: none;
-    }
-    
-    .states-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    
-    .state-card {
-      padding: 1.5rem 1rem;
-    }
-    
-    .suburbs-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .mobile-sticky-cta {
-      display: block;
-    }
-    
-    .footer-content {
-      grid-template-columns: 1fr;
-    }
-    
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-</style>
-
-<script>
-  // Initialize AOS (Scroll animations)
-  document.addEventListener('DOMContentLoaded', function() {
-    // Simulate AOS functionality
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('aos-animate');
-        }
-      });
-    }, observerOptions);
-    
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      observer.observe(el);
-    });
-    
-    // Header scroll effect
-    let lastScroll = 0;
-    const header = document.getElementById('header');
-    
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        header.style.background = 'rgba(255, 255, 255, 1)';
-        header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
-      } else {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-      }
-      
-      lastScroll = currentScroll;
-    });
-  });
-</script>
