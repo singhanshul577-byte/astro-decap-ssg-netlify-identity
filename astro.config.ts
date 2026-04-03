@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import type { AstroUserConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react"; // Ye line sahi hai ab
+import react from "@astrojs/react";
 
 const config: AstroUserConfig = defineConfig({
   site: "http://www.example.com",
@@ -9,8 +9,19 @@ const config: AstroUserConfig = defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    react(), // Ye Astro ka integration function hai
+    react(),
   ],
+  // YEH WALA HISSA ADD KAREIN
+  vite: {
+    resolve: {
+      alias: {
+        'react-dom/client': 'react-dom/client',
+      },
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom'],
+    },
+  },
 });
 
 export default defineConfig(config);
