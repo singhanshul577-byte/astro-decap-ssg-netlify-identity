@@ -47,8 +47,10 @@
 		"typescript": "^5.7.3"
     }
   "pnpm": {
-    "overrides": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0"
-    }
+  "overrides": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "decap-cms-core>react": "^18.2.0",
+    "decap-cms-core>react-dom": "^18.2.0"
   }
+}
