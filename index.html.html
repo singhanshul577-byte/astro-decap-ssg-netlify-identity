@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes">
+<!-- ✅ FIX: Meta referrer policy for iOS image loading -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>24/7 Water Damage Helpline | Connect With Local Pros Nationwide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ========== COMPLETE RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Glass effect - iOS safe */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Grid */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.grid-states {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #0a3d62;
+}
+
+.card p {
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+/* Stats */
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0a3d62, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* FAQ */
+.faq-item {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.faq-item summary {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0a3d62;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item[open] summary {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-content {
+    padding: 0 20px 20px 20px;
+    color: #4b5563;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0a3d62, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0a3d62, #e67e22);
+    margin: 16px auto;
+    border-radius: 2px;
+}
+
+/* Before/After Card */
+.before-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.before-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 20px;
+    color: white;
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: 2;
+}
+
+.before-card:hover .before-overlay {
+    opacity: 1;
+}
+
+/* Image container for consistent sizing */
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* State tags */
+.state-tag {
+    background: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #0a3d62;
+    display: inline-block;
+}
+
+/* Floating Button */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    box-shadow: 0 5px 15px rgba(230,126,34,0.4);
+    z-index: 100;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background: #0f172a;
+    color: #cbd5f5;
+    padding: 48px 0;
+    margin-top: 48px;
+}
+
+/* iPhone specific */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .btn, .btn-secondary { width: 100%; justify-content: center; }
+    .container { padding: 16px; }
+    .grid-states { grid-template-columns: repeat(2, 1fr); }
+    .image-container { height: 180px; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.6rem; }
+    .glass-effect { font-size: 0.7rem; padding: 4px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Floating Button -->
+<a href="tel:+18885551234" class="fab"><i class="fas fa-phone-alt"></i></a>
+
+<!-- ========== HERO SECTION (PREMIUM BLUR OVERLAY + HIGH-CONVERSION IMAGE) ========== -->
+<section class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; background: #0a3d62;">
+    <!-- Background image with brightness filter for premium feel -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
+        <img 
+            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1600&auto=format&fit=crop"
+            alt="Water damage restoration professionals working - emergency response"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: brightness(0.6);"
+            loading="eager"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer-when-downgrade">
+    </div>
+    <!-- Overlay gradient -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 61, 98, 0.5) 0%, rgba(10, 61, 98, 0.3) 100%); z-index: 1;"></div>
+    <!-- Content -->
+    <div style="position: relative; z-index: 2; width: 100%; padding: 60px 20px;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px;">
+                <span class="glass-effect"><i class="fas fa-check-circle" style="color: #86efac;"></i> Nationwide Network</span>
+                <span class="glass-effect"><i class="fas fa-star" style="color: #fde047;"></i> 500+ Local Pros</span>
+                <span class="glass-effect"><i class="fas fa-clock"></i> 24/7 Emergency</span>
+            </div>
+            <h1 style="font-size: 3rem; margin-bottom: 20px; line-height: 1.2;">Water Damage?<br><span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">We Connect You to Local Pros</span></h1>
+            <p style="font-size: 1.25rem; margin-bottom: 30px;">Emergency response under 60 minutes anywhere in the USA. Free connection service.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+18885551234" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="#how-it-works" class="btn-secondary"><i class="fas fa-play-circle"></i> How It Works</a>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 24px;">
+                <span class="glass-effect"><i class="fas fa-map-marker-alt"></i> All 50 States</span>
+                <span class="glass-effect"><i class="fas fa-water"></i> Flood-Prone Areas</span>
+                <span class="glass-effect"><i class="fas fa-file-invoice"></i> Insurance Help</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FTC Disclaimer -->
+<div style="background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 8px 0;">
+    <div class="container" style="text-align: center; color: #92400e; font-size: 0.875rem;">
+        <i class="fas fa-info-circle"></i> FREE matching service. We connect you with independent local contractors.
+    </div>
+</div>
+
+<!-- ========== DAVID SHAW SECTION - UPDATED PROFILE PICTURE ========== -->
+<section style="padding: 40px 0;">
+    <div class="container">
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: linear-gradient(135deg, #f8fafc, #eff6ff); border-left: 5px solid #e67e22; border-radius: 20px; padding: 24px;">
+            <!-- NEW David Shaw profile image from Pexels -->
+            <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img 
+                    src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+                    alt="David Shaw - Emergency Response Coordinator"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                    crossorigin="anonymous"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    loading="eager">
+            </div>
+            <!-- TEXT -->
+            <div style="flex: 1;">
+                <h3 style="margin: 0; font-size: 20px; color: #0a3d62;">David Shaw</h3>
+                <p style="margin: 4px 0; color: #ea580c; font-size: 14px; font-weight: 500;">
+                    Emergency Response Coordinator
+                </p>
+                <p style="margin: 0; font-size: 14px; color: #4b5563; line-height: 1.5;">
+                    David helps homeowners across the USA connect with certified local restoration professionals 24/7. Free consultation, IICRC standards, immediate connection.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section style="padding: 48px 0; background: #eff6ff;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div class="stat-card"><div class="stat-number">24/7</div><p style="color: #4b5563;">National Dispatch</p></div>
+            <div class="stat-card"><div class="stat-number">&lt;60min</div><p style="color: #4b5563;">Local Response</p></div>
+            <div class="stat-card"><div class="stat-number">100%</div><p style="color: #4b5563;">Free Service</p></div>
+            <div class="stat-card"><div class="stat-number">$0</div><p style="color: #4b5563;">No Obligation</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works" style="padding: 64px 0;">
+    <div class="container">
+        <div class="section-title">
+            <span style="color: #ea580c; font-size: 0.875rem; text-transform: uppercase;">Simple Process</span>
+            <h2>How the Helpline Works</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="grid-3">
+            <div style="text-align: center; padding: 24px;">
+                <div style="width: 60px; height: 60px; background: #0a3d62; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 16px;">1</div>
+                <i class="fas fa-phone-alt" style="font-size: 2rem; color: #0a3d62; margin-bottom: 12px; display: block;"></i>
+                <h3 style="color: #0a3d62; margin-bottom: 8px;">You Call</h3>
+                <p style="color: #4b5563;">Call our free 24/7 hotline</p>
+            </div>
+            <div style="text-align: center; padding: 24px;">
+                <div style="width: 60px; height: 60px; background: #0a3d62; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 16px;">2</div>
+                <i class="fas fa-handshake" style="font-size: 2rem; color: #0a3d62; margin-bottom: 12px; display: block;"></i>
+                <h3 style="color: #0a3d62; margin-bottom: 8px;">We Connect You</h3>
+                <p style="color: #4b5563;">Match with local independent pros in your area</p>
+            </div>
+            <div style="text-align: center; padding: 24px;">
+                <div style="width: 60px; height: 60px; background: #0a3d62; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 16px;">3</div>
+                <i class="fas fa-tools" style="font-size: 2rem; color: #0a3d62; margin-bottom: 12px; display: block;"></i>
+                <h3 style="color: #0a3d62; margin-bottom: 8px;">Pro Fixes Damage</h3>
+                <p style="color: #4b5563;">Contractor contacts you directly to restore your property</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION - With updated Mold Remediation & Water Damage Repair -->
+<section style="padding: 64px 0; background: #eff6ff;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Professional Restoration Services</h2>
+            <div class="section-divider"></div>
+            <p style="color: #4b5563;">We connect you with local experts across all 50 states</p>
+        </div>
+        <div class="grid-3">
+            <!-- 1️⃣ Water Extraction -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+                         alt="Water extraction equipment removing flood water"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>Water Extraction</h3><p>Rapid water removal using industrial-grade equipment</p></div>
+            </div>
+            <!-- 2️⃣ Structural Drying -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800&auto=format&fit=crop"
+                         alt="Industrial drying equipment and dehumidifiers"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>Structural Drying</h3><p>IICRC S500 scientific drying protocols</p></div>
+            </div>
+            <!-- 3️⃣ Mold Remediation -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.pexels.com/photos/6195288/pexels-photo-6195288.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                         alt="Mold removal and remediation process"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>Mold Remediation</h3><p>Safe mold removal with containment</p></div>
+            </div>
+            <!-- 4️⃣ Flood Cleanup -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"
+                         alt="Flood cleanup and water damage restoration"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>Flood Cleanup</h3><p>Complete flood damage restoration</p></div>
+            </div>
+            <!-- 5️⃣ Emergency Response -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
+                         alt="Emergency restoration team responding quickly"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>24/7 Emergency</h3><p>Immediate response nationwide</p></div>
+            </div>
+            <!-- 6️⃣ Water Damage Repair -->
+            <div class="card">
+                <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+                    <img src="https://images.pexels.com/photos/5691621/pexels-photo-5691621.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                         alt="Home repair after water damage"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="card-content"><h3>Water Damage Repair</h3><p>Full structural restoration</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BEFORE & AFTER SECTION - UPDATED with requested Pexels images (Flooded Property BEFORE + AFTER restored) -->
+<section style="padding: 64px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Before & After</h2>
+            <div class="section-divider"></div>
+            <p style="color: #4b5563;">See the quality of work from our network of local professionals</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+            <!-- BEFORE Image - Flooded Property with dirty water (Pexels) + brightness(0.65) for dramatic effect -->
+            <div class="before-card">
+                <div style="width: 100%; height: 320px; overflow: hidden; position: relative;">
+                    <img src="https://images.pexels.com/photos/7534226/pexels-photo-7534226.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                         alt="Flooded property with dirty water and damage"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: brightness(0.65);"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="before-overlay"><span style="background: #ef4444; padding: 4px 8px; border-radius: 20px; font-size: 0.75rem;">BEFORE</span><p style="margin-top: 8px;">Flooded property with severe water damage</p></div>
+            </div>
+            <!-- AFTER Image - Clean Restored Property (Pexels) -->
+            <div class="before-card">
+                <div style="width: 100%; height: 320px; overflow: hidden; position: relative;">
+                    <img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                         alt="Clean restored property after water damage"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         referrerpolicy="no-referrer-when-downgrade">
+                </div>
+                <div class="before-overlay"><span style="background: #22c55e; padding: 4px 8px; border-radius: 20px; font-size: 0.75rem;">AFTER</span><p style="margin-top: 8px;">Fully restored by network pro</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICEABLE AREAS -->
+<section style="padding: 64px 0; background: #eff6ff;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Serviceable Areas</h2>
+            <div class="section-divider"></div>
+            <p style="color: #4b5563;">We connect homeowners with local pros in all 50 US States</p>
+        </div>
+        <div class="grid-states">
+            <span class="state-tag">Alabama</span><span class="state-tag">Alaska</span><span class="state-tag">Arizona</span><span class="state-tag">Arkansas</span>
+            <span class="state-tag">California</span><span class="state-tag">Colorado</span><span class="state-tag">Connecticut</span><span class="state-tag">Delaware</span>
+            <span class="state-tag">Florida</span><span class="state-tag">Georgia</span><span class="state-tag">Hawaii</span><span class="state-tag">Idaho</span>
+            <span class="state-tag">Illinois</span><span class="state-tag">Indiana</span><span class="state-tag">Iowa</span><span class="state-tag">Kansas</span>
+            <span class="state-tag">Kentucky</span><span class="state-tag">Louisiana</span><span class="state-tag">Maine</span><span class="state-tag">Maryland</span>
+            <span class="state-tag">Massachusetts</span><span class="state-tag">Michigan</span><span class="state-tag">Minnesota</span><span class="state-tag">Mississippi</span>
+            <span class="state-tag">Missouri</span><span class="state-tag">Montana</span><span class="state-tag">Nebraska</span><span class="state-tag">Nevada</span>
+            <span class="state-tag">New Hampshire</span><span class="state-tag">New Jersey</span><span class="state-tag">New Mexico</span><span class="state-tag">New York</span>
+            <span class="state-tag">North Carolina</span><span class="state-tag">North Dakota</span><span class="state-tag">Ohio</span><span class="state-tag">Oklahoma</span>
+            <span class="state-tag">Oregon</span><span class="state-tag">Pennsylvania</span><span class="state-tag">Rhode Island</span><span class="state-tag">South Carolina</span>
+            <span class="state-tag">South Dakota</span><span class="state-tag">Tennessee</span><span class="state-tag">Texas</span><span class="state-tag">Utah</span>
+            <span class="state-tag">Vermont</span><span class="state-tag">Virginia</span><span class="state-tag">Washington</span><span class="state-tag">West Virginia</span>
+            <span class="state-tag">Wisconsin</span><span class="state-tag">Wyoming</span>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section style="padding: 64px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details class="faq-item"><summary>How quickly can I get connected? <i class="fas fa-chevron-down"></i></summary><div class="faq-content">Our emergency service operates 24/7 across all US time zones. Average connection time is under 2 minutes. <strong>Call Now</strong> to get connected immediately.</div></details>
+            <details class="faq-item"><summary>Do you provide restoration services directly? <i class="fas fa-chevron-down"></i></summary><div class="faq-content">No, we are a FREE matching service that connects you with independent local contractors across the USA.</div></details>
+            <details class="faq-item"><summary>What areas do you serve? <i class="fas fa-chevron-down"></i></summary><div class="faq-content">We serve all 50 states with a network of local restoration professionals.</div></details>
+            <details class="faq-item"><summary>Is there any cost for this service? <i class="fas fa-chevron-down"></i></summary><div class="faq-content">No, our matching service is completely free. You only pay the contractor for work performed.</div></details>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="background: linear-gradient(135deg, #0a3d62, #1e5799); color: white; text-align: center; padding: 60px 20px;">
+    <div class="container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 16px;">Need Immediate Water Damage Help?</h2>
+        <p style="margin-bottom: 24px;">Response time under 60 minutes. Free connection service nationwide.</p>
+        <a href="tel:+18885551234" class="btn" style="background: #e67e22; font-size: 1.2rem; padding: 16px 40px;"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <p style="margin-top: 20px; font-size: 0.875rem;">24/7 • Free • No Obligation</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+            <div>
+                <h3 style="color: white; margin-bottom: 12px;">Water Damage Helpline</h3>
+                <p>We connect homeowners with local restoration professionals across the USA.</p>
+                <p style="font-size: 0.75rem; margin-top: 16px;">© 2026 Water Damage Helpline • Free matching service only</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 12px;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #cbd5f5; text-decoration: none;">Services</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#how-it-works" style="color: #cbd5f5; text-decoration: none;">How It Works</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #cbd5f5; text-decoration: none;">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 12px;">Contact</h4>
+                <p><i class="fas fa-phone-alt"></i> Call Now</p>
+                <!-- ✅ EMAIL UPDATED as requested -->
+                <p><i class="fas fa-envelope"></i> support.waterexperts@snappyx.pro</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #334155; margin-top: 32px; padding-top: 24px; text-align: center; font-size: 0.75rem;">
+            <p>This is a FREE matching service. We connect you with independent local contractors. We do not provide restoration services directly.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
